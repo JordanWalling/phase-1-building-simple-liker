@@ -6,7 +6,7 @@ const FULL_HEART = "♥";
 function initialise() {
   // 1. hide error modal
   let modal = document.querySelector("#modal");
-  modal.classList = "hidden";
+  modal.classList.add("hidden");
 
   // 2. click heart
   let glyphs = document.querySelectorAll(".like-glyph");
