@@ -5,6 +5,7 @@ const FULL_HEART = "♥";
 // Your JavaScript code goes here!
 function initialise() {
   // 1. hide error modal
+  // let modal = document.querySelector("#modal");
   let modal = document.querySelector("#modal");
   modal.classList.add("hidden");
 
@@ -27,10 +28,11 @@ function initialise() {
         })
         .catch((error) => {
           console.log(error);
-          setTimeout(() => {
-            modal.classList.add("hidden");
+          let modalId = setTimeout(() => {
+            modal.classList.remove("hidden");
             modalMessage.textContent = error.message;
           }, 3000);
+          clearTimeout(modalId);
         });
     });
   });
